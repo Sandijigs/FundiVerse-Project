@@ -34,4 +34,4 @@ FUNDIVERSE is a decentralized crowdfunding platform built on Ethereum, empowerin
 
 ## Live Demo
 
-👉 [Try FUNDIVERSE Live](https://fundiverse-dapp.vercel.app) <!-- Add your live URL -->
+👉 [Try FUNDIVERSE Live](https://fundi-verse-project.vercel.app/)

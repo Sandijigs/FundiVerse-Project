@@ -24,13 +24,15 @@ const config: HardhatUserConfig = {
   },
   networks: {
     sepolia: {
-      url: process.env.RPC_URL || "",
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
+      url: "https://eth-sepolia.g.alchemy.com/v2/KjJNAozHVVYvbWAIJdwXyV3s87nxsl7W",
+      accounts: process.env.PRIVATE_KEY
+        ? ["0x64cd4bc583eb8b61522b036693c0567064b4a00c1b69e2a88bdc50f915807"]
+        : [],
       chainId: 11155111, // Sepolia's chain ID
     },
   },
   etherscan: {
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: "JWXETWN6GJYKRS28565T549QFUX44TREM6",
   },
   typechain: {
     outDir: "typechain",

@@ -1,7 +1,7 @@
 import React from "react";
-import tagType from "../assets/tag.svg";
+import tagType from "../assets/type.svg";
 import thirdweb from "../assets/thirdweb.png";
-import { daysLeft } from "../utils";
+import { daysLeft } from "../utils/util_functions";
 
 // Define props interface based on Campaign structure
 interface FundCardProps {

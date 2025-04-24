@@ -14,7 +14,7 @@ import { navlinks } from "../constants/navlink";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const { address, isConnected } = useAccount();
+  const { isConnected } = useAccount();
   const [isActive, setIsActive] = useState("dashboard");
   const [toggleDrawer, setToggleDrawer] = useState(false);
   // const { connect, address } = useStateContext();

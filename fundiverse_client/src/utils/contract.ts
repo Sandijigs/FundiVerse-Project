@@ -1,7 +1,7 @@
 import { ethers } from "ethers";
 
 // Replace with your contract address
-const contractAddress = "0x21a7B903d9e0EAB7b977F486aDa76c03a733C6f3";
+// const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
 
 // Define the ABI string as JSON, not as a manual object
 const contractABI = [
@@ -213,12 +213,24 @@ const contractABI = [
 // Create Interface for ABI parsing
 const contractInterface = new ethers.Interface(contractABI);
 
-export const getContract = (signer: ethers.Signer): ethers.Contract => {
-  // Create a contract instance with a signer
-  const contract = new ethers.Contract(
+// export const getContract = (signer: ethers.Signer): ethers.Contract => {
+//   // Create a contract instance with a signer
+//   const contract = new ethers.Contract(
+//     contractAddress,
+//     contractInterface,
+//     signer
+//   );
+//   return contract;
+// };
+
+// The updated getContract function
+export const getContract = (
+  providerOrSigner: ethers.Provider | ethers.Signer,
+  contractAddress: string
+): ethers.Contract => {
+  return new ethers.Contract(
     contractAddress,
     contractInterface,
-    signer
+    providerOrSigner
   );
-  return contract;
 };

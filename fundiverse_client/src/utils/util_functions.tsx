@@ -4,10 +4,15 @@
  * @returns Number of days left as a string
  */
 export const daysLeft = (deadline: string | number): string => {
-  const difference = new Date(deadline).getTime() - Date.now();
+  const deadlineInMs =
+    typeof deadline === "number"
+      ? deadline * 1000
+      : new Date(deadline).getTime();
+
+  const difference = deadlineInMs - Date.now();
   const remainingDays = difference / (1000 * 3600 * 24);
 
-  return remainingDays.toFixed(0);
+  return remainingDays > 0 ? remainingDays.toFixed(0) : "0";
 };
 
 /**

@@ -1,21 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // import { v4 as uuidv4 } from "uuid";
-// import FundCard from "./FundCard";
+import FundCard from "./FundCard";
 import loader from "../assets/loader.svg";
-
-// Define the campaign type structure based on your smart contract
+// Define types for the campaign object
 interface Campaign {
   title: string;
   owner: string;
   description: string;
-  target: number;
+  target: string;
   deadline: number;
-  amountCollected: number;
+  amountCollected: string;
   image: string;
-  // Add any other fields from your smart contract
+  // Add other campaign properties as needed
 }
-
+// Define props interface
 interface DisplayCampaignsProps {
   title: string;
   isLoading: boolean;
@@ -50,21 +49,23 @@ const DisplayCampaigns: React.FC<DisplayCampaignsProps> = ({
 
         {!isLoading && campaigns.length === 0 && (
           <p className="font-epilogue font-semibold text-[14px] leading-[30px] text-[#818183]">
-            You have not created any campaigns yet
+            You have not created any campigns yet
           </p>
         )}
 
-        {/* When you're ready to uncomment this section, use this properly typed version:
         {!isLoading &&
           campaigns.length > 0 &&
-          campaigns.map((campaign) => (
+          campaigns.map((campaign, index) => (
             <FundCard
-              key={campaign.title + campaign.owner}
-              {...campaign}
+              key={index}
+              {...{
+                ...campaign,
+                target: Number(campaign.target),
+                amountCollected: Number(campaign.amountCollected),
+              }}
               handleClick={() => handleNavigate(campaign)}
             />
           ))}
-        */}
       </div>
     </div>
   );

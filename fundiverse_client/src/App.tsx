@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 // import CampaignDetails from "./pages/Campaigndetails";
-// import CreateCampaign from "./pages/CreateCampaign";
+import CreateCampaign from "./pages/CreateCampaign";
 import Home from "./pages/Home";
 // import Profile from "./pages/Profile";
 
@@ -19,8 +19,9 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/profile" element={<Profile />} />
           <Route path="/create-campaign" element={<CreateCampaign />} />
+          {/* <Route path="/profile" element={<Profile />} />
+         
           <Route path="/campaign-details/:id" element={<CampaignDetails />} /> */}
         </Routes>
       </div>

@@ -1,27 +1,32 @@
 import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
+import { useWalletClient, useAccount } from "wagmi";
+import { createNewCampaign } from "../utils/contractFunctions";
+import { parseEther } from "viem"; // or ethers.js if you're using it
 
-import { useStateContext } from "../context";
+// import { useStateContext } from "../context";
 import money from "../assets/money.svg";
 import CustomButton from "../components/CustomButton";
 import FormField from "../components/FormFeild";
 import Loader from "../components/Loader";
-import { checkIfImage } from "../utils";
+import { checkIfImage } from "../utils/util_functions";
 
 interface FormState {
   name: string;
   title: string;
   description: string;
-  target: string;
-  deadline: string;
+  target: string; // ✅ changed from bigint
+  deadline: string; // ✅ changed from number
   image: string;
 }
 
 const CreateCampaign: React.FC = () => {
   const navigate = useNavigate();
+  const { data: walletClient } = useWalletClient();
+  const { address } = useAccount();
   const [isLoading, setIsLoading] = useState(false);
-  const { createCampaign } = useStateContext();
+  // const { createCampaign } = useStateContext();
   const [form, setForm] = useState<FormState>({
     name: "",
     title: "",
@@ -39,17 +44,21 @@ const CreateCampaign: React.FC = () => {
   };
 
   const handleSubmit = async (e: FormEvent) => {
-    console.log("form data", form);
     e.preventDefault();
 
     checkIfImage(form.image, async (exists: boolean) => {
       if (exists) {
         setIsLoading(true);
         try {
-          await createCampaign({
-            ...form,
-            target: ethers.utils.parseUnits(form.target, 18).toString(),
+          await createNewCampaign(walletClient, address, {
+            name: form.name,
+            title: form.title,
+            description: form.description,
+            target: parseEther(form.target),
+            deadline: new Date(form.deadline).getTime(),
+            image: form.image,
           });
+
           navigate("/");
         } catch (error) {
           console.error("Error creating campaign:", error);

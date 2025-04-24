@@ -56,7 +56,9 @@ export const createNewCampaign = async (
 
 export const getCampaigns = async (contractAddress: string): Promise<any[]> => {
   const provider = new ethers.JsonRpcProvider(
-    import.meta.env.VITE_ALCHEMY_SEPOLIA_URL
+    `https://eth-sepolia.g.alchemy.com/v2/${
+      import.meta.env.VITE_ALCHEMY_API_KEY
+    }`
   );
   const contract = getContract(provider, contractAddress);
 
@@ -117,7 +119,9 @@ export const donateToCampaign = async (
 
 export const getDonors = async (campaignId: number) => {
   const provider = new ethers.JsonRpcProvider(
-    import.meta.env.VITE_ALCHEMY_SEPOLIA_URL
+    `https://eth-sepolia.g.alchemy.com/v2/${
+      import.meta.env.VITE_ALCHEMY_API_KEY
+    }`
   );
   const contract = getContract(provider, contractAddress);
 

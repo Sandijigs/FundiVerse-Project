@@ -4,6 +4,5 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  // Remove the postcss configuration as it's not needed when using the Vite plugin
+  plugins: [tailwindcss(), react()],
 });

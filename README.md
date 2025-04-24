@@ -1,39 +1,37 @@
-# TrexFood
+# FUNDIVERSE
 
-![TrexFood](./image/nata-logo.jpg)
+![FUNDIVERSE Logo](./public/logo.png) <!-- Add your logo path -->
 
 ## Overview
 
-TrexFood is a next-generation food delivery platform powered by Nata, an AI assistant that orchestrates decentralized, eco-friendly food delivery experiences. Built with blockchain technology and sustainable practices at its core, TrexFood revolutionizes how people interact with food delivery services.
+FUNDIVERSE is a decentralized crowdfunding platform built on Ethereum, empowering creators to raise funds for projects they believe in. Users can discover, support, and track campaigns with complete transparency through blockchain technology.
 
 ## Features
 
-✅ **AI-Powered Personal Assistant (Nata)** – Your friendly guide through sustainable food choices and delivery  
-✅ **Decentralized Delivery Network** – Blockchain-based ordering and delivery tracking system  
-✅ **Eco-Friendly Focus** – Carbon-conscious delivery options and sustainable packaging  
-✅ **Smart Order Management** – AI-driven order optimization and routing  
-✅ **Mood-Based Recommendations** – Personalized food suggestions based on user preferences and current mood  
-✅ **Real-Time Sustainability Tracking** – Monitor your environmental impact with each order
+✅ **Wallet Connection** – Securely connect with MetaMask, Coinbase, and other Ethereum wallets  
+✅ **Campaign Creation** – Launch your own fundraising campaign in minutes  
+✅ **Transparent Funding** – View all campaigns with real-time contribution tracking  
+✅ **Decentralized Payments** – Contribute ETH directly to projects you support  
+✅ **Profile Dashboard** – Track your created and supported campaigns  
+✅ **Smart Contract Security** – Built with industry-standard security practices
 
 ## Technologies Used
 
-- **OpenAI Assistant API** – An AI agent for language-based tasks and real-time conversations
-- **Nethermind Starknet** – Blockchain infrastructure for decentralized execution
-- **Cairo** – Smart contract language for Starknet
-- **React** – UI creation and interaction for the food ordering and delivery interface
+### Smart Contracts
 
-## User Experience
+- **Solidity** – Smart contract programming language
+- **Hardhat** – Ethereum development environment
+- **Viem** – Lightweight Ethereum interface
+- **Wagmi** – React hooks for Ethereum
 
-- Intuitive chat interface with Nata
-- Mood-based personalization
-- Real-time order tracking
-- Sustainability score system
-- Community-driven recommendations
+### Frontend
 
-## Installation
+- **React** + **Vite** – Modern frontend framework
+- **TypeScript** – Type-safe JavaScript
+- **Tailwind CSS** – Utility-first styling
+- **RainbowKit** – Beautiful wallet connection UI
+- **Context API** – State management
 
-```bash
-git clone https://github.com/trex-Tech/nicky-ethglobal-event.git
-cd TrexFood
-npm install or yarn install or bun install or pnpm install
-```
+## Live Demo
+
+👉 [Try FUNDIVERSE Live](https://fundiverse-dapp.vercel.app) <!-- Add your live URL -->
